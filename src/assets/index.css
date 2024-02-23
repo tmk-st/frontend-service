@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import 'variables.scss'; */
+@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap");
+
+body {
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 400;
+  padding: 2rem 7rem;
+  background: #f4f4f4;
+  color: #1C1C1C;
+}
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: #1C1C1C;
+  }
