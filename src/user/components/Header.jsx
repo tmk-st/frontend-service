@@ -3,7 +3,14 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div>
+    <div className="justify-between flex">
+      <span className="text-center">
+        最新
+        <br />
+        フロントエンドツール
+        <br />
+        まとめ
+      </span>
       <ul>
         <Link to="/mypage">
           <li>マイページ</li>

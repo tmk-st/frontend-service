@@ -8,7 +8,7 @@ const UserIndex = () => {
     <div>
       <Header />
       <div>
-        <h1 className="text-center text-6xl font-[800] my-[100px]">
+        <h1 className="text-center text-6xl font-[800] my-[200px]">
           最新フロントエンドツールまとめ
         </h1>
       </div>
