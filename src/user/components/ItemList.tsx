@@ -54,7 +54,6 @@ const ItemList = () => {
                 <span className="text-sm text-gray-300 border block rounded-lg w-fit px-2 py-1">
                   {categories[item.category_id]}
                 </span>
-                <img src="/img/bookmark_line.svg" />
               </div>
             </div>
           </li>
@@ -89,7 +88,7 @@ const ItemList = () => {
         <div className="my-[100px]">
           <div className="flex mb-5">
             <img src="/img/book_6_fill.svg" />
-            <h2 className="text-3xl ml-2">定番</h2>
+            <h2 className="text-3xl ml-3">定番</h2>
           </div>
           <ul className="flex justify-between">{renderItems()}</ul>
         </div>

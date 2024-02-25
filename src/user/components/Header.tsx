@@ -13,9 +13,14 @@ const Header = () => {
           まとめ
         </span>
       </Link>
-      <Link to="/mypage">
-        <img src="/img/user_icon.svg" alt="マイページ" />
-      </Link>
+      <ul className="flex">
+        <li className="cursor-pointer">
+          <Link to="/">トップ</Link>
+        </li>
+        <li className="ml-10 cursor-pointer">
+          <Link to="/about">このサイトについて</Link>
+        </li>
+      </ul>
     </div>
   );
 };

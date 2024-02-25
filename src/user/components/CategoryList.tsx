@@ -24,7 +24,6 @@ const Category = () => {
         {category.map((item) => (
           <Link to={"/category?" + item.id} key={item.id}>
             <li className="text-2xl mr-6 rounded-full py-4 bg-[#1C1C1C] text-white w-[15rem] flex">
-              {/* <img src={"/img/" + item.img_file_name} alt={item.name} /> */}
               <h3 className="my-0 mx-auto">{item.name}</h3>
             </li>
           </Link>

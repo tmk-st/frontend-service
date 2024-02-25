@@ -14,7 +14,7 @@ const UserIndex = () => {
         </h1>
         <p className="text-center mb-[200px] text-lg leading-9">
           Web開発に携わるすべての方へ <br />
-          移り変わりの速いフロントエンド技術の
+          移り変わりの早いフロントエンド開発の
           <span className="text-[#EA3800] border-b border-[#EA3800] p-1 ">最新技術</span>や
           <span className="text-[#EA3800] border-b border-[#EA3800] p-1">トレンド</span>を紹介します
         </p>
