@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Category = () => {
@@ -7,11 +7,11 @@ const Category = () => {
   useEffect(() => {
     const getCategory = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/categories');
+        const response = await fetch("http://localhost:3001/api/categories");
         const data = await response.json();
         setCategory(data);
       } catch (error) {
-        console.error('エラー:', error);
+        console.error("エラー:", error);
       }
     };
 
@@ -19,21 +19,23 @@ const Category = () => {
   }, []);
 
   const renderCategory = () => {
-    console.log(category)
     return (
-      <ul className="flex justify-between">
-        {category.map(item => (
-          <li key={item.id}className="text-2xl shadow-lg rounded-xl p-3 bg-white w-[14rem] text-center">{item.name}</li>
+      <>
+        {category.map((item) => (
+          <Link to={"/category/?" + item.id} key={item.id}>
+            <li className="text-2xl shadow-lg rounded-xl px-3 py-6 bg-white w-[16rem] flex">
+              <img src={"/img/" + item.img_file_name} alt={item.name} />
+              <h3 className="my-0 mx-auto">{item.name}</h3>
+            </li>
+          </Link>
         ))}
-      </ul>
+      </>
     );
   };
 
   return (
     <div className="my-[100px]">
-      <Link to="/category">
-      <div>{renderCategory()}</div>
-      </Link>
+      <ul className="flex justify-between">{renderCategory()}</ul>
     </div>
   );
 };

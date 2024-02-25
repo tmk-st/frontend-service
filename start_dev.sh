@@ -1,5 +1,3 @@
-brew services start mysql
-
 cd server
 node app.ts &
 

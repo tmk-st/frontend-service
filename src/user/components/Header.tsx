@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="justify-between flex">
-      <span className="text-center">
-        最新
-        <br />
-        フロントエンドツール
-        <br />
-        まとめ
-      </span>
-      <ul>
-        <Link to="/mypage">
-          <li>マイページ</li>
-        </Link>
-      </ul>
+      <Link to="/" className="text-center">
+        <span>
+          最新
+          <br />
+          フロントエンドツール
+          <br />
+          まとめ
+        </span>
+      </Link>
+      <Link to="/mypage">
+        <img src="/img/user_icon.svg" alt="マイページ" />
+      </Link>
     </div>
   );
 };
