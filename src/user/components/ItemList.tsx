@@ -39,13 +39,18 @@ const ItemList = () => {
         {items.map((item) => (
           <li
             key={item.id}
-            className="shadow-lg bg-white w-[17rem] rounded-xl p-3 hover:shadow-inner"
+            className="shadow-lg bg-white w-[18rem] rounded-xl p-4 hover:shadow-inner"
           >
-            <img src="" alt="" />
-            <div>
-              <h3 className="text-2xl font-extrabold mb-5">{item.name}</h3>
-              <span>{item.description}</span>
-              <div className="flex justify-between mt-5">
+            {/* FIXME 仮画像 */}
+            <div className="flex justify-center">
+              <img src="/img/laptop_2_line.png" className="w-[5rem]" />
+            </div>
+            <div className="flex flex-col justify-between h-[70%]">
+              <div>
+                <h3 className="text-2xl font-extrabold mb-5">{item.name}</h3>
+                <span>{item.description}</span>
+              </div>
+              <div className="flex justify-between mt-5 mb-2">
                 <span className="text-sm text-gray-300 border block rounded-lg w-fit px-2 py-1">
                   {categories[item.category_id]}
                 </span>
@@ -83,7 +88,7 @@ const ItemList = () => {
       <Link to="/detail">
         <div className="my-[100px]">
           <div className="flex mb-5">
-            <img src="/img/book_6_line.svg" />
+            <img src="/img/book_6_fill.svg" />
             <h2 className="text-3xl ml-2">定番</h2>
           </div>
           <ul className="flex justify-between">{renderItems()}</ul>

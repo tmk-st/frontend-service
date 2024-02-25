@@ -16,7 +16,7 @@ const UserIndex = () => {
           Web開発に携わるすべての方へ <br />
           移り変わりの速いフロントエンド技術の
           <span className="text-[#EA3800] border-b border-[#EA3800] p-1 ">最新技術</span>や
-          <span className="text-[#EA3800] border-b border-[#EA3800] p-1">トレンド</span>を紹介します。
+          <span className="text-[#EA3800] border-b border-[#EA3800] p-1">トレンド</span>を紹介します
         </p>
       </div>
       <CategoryList />

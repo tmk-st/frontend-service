@@ -10,7 +10,7 @@ const Category = () => {
   return (
     <div>
       <Header />
-      <div className="text-center my-10">
+      <div className="my-10">
         <h1 className="text-4xl font-bold">カテゴリー名</h1>
       </div>
       <Footer />

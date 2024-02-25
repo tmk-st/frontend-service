@@ -7,7 +7,7 @@ const Detail = () => {
     <div>
       <Header />
       <div className="bg-white p-10 my-10 rounded-xl shadow-lg">
-      <p>詳細</p>
+        <p>詳細</p>
       </div>
       <Footer />
     </div>

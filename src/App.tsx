@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./shared/pages/Login";
 import UserIndex from "./user/pages/UserIndex";
 import Detail from "./user/pages/Detail";
 import Category from "./user/pages/Category";
@@ -11,6 +12,7 @@ const App = () => {
     <Router>
       <React.StrictMode>
         <Routes>
+          <Route path="/login" element={<Login />} />
           {/* ユーザー画面 */}
           <Route path="/" element={<UserIndex />} />
           <Route path="/detail" element={<Detail />} />
