@@ -39,13 +39,19 @@ const ItemList = () => {
         {items.map((item) => (
           <li
             key={item.id}
-            className="shadow-lg bg-white w-[13rem] rounded-xl p-3"
+            className="shadow-lg bg-white w-[17rem] rounded-xl p-3 hover:shadow-inner"
           >
-            <h3 className="text-2xl font-extrabold mb-5">{item.name}</h3>
-            <span>{item.description}</span>
-            <span className="text-sm text-gray-300 border mt-5 block rounded-lg w-fit px-2 py-1">
-              {categories[item.category_id]}
-            </span>
+            <img src="" alt="" />
+            <div>
+              <h3 className="text-2xl font-extrabold mb-5">{item.name}</h3>
+              <span>{item.description}</span>
+              <div className="flex justify-between mt-5">
+                <span className="text-sm text-gray-300 border block rounded-lg w-fit px-2 py-1">
+                  {categories[item.category_id]}
+                </span>
+                <img src="/img/bookmark_line.svg" />
+              </div>
+            </div>
           </li>
         ))}
       </>
@@ -57,7 +63,7 @@ const ItemList = () => {
       <Link to="/detail">
         <div className="my-[100px]">
           <div className="flex mb-5">
-            <img src="/img/sparkles_fill.svg" alt="最新アイコン" />
+            <img src="/img/sparkles_fill.svg" />
             <h2 className="text-3xl ml-3">最新</h2>
           </div>
           <ul className="flex justify-between">{renderItems()}</ul>
@@ -67,8 +73,18 @@ const ItemList = () => {
       <Link to="/detail">
         <div className="my-[100px]">
           <div className="flex mb-5">
-            <img src="/img/trending_up_fill.svg" alt="最新アイコン" />
+            <img src="/img/trending_up_fill.svg" />
             <h2 className="text-3xl ml-2">トレンド</h2>
+          </div>
+          <ul className="flex justify-between">{renderItems()}</ul>
+        </div>
+      </Link>
+
+      <Link to="/detail">
+        <div className="my-[100px]">
+          <div className="flex mb-5">
+            <img src="/img/book_6_line.svg" />
+            <h2 className="text-3xl ml-2">定番</h2>
           </div>
           <ul className="flex justify-between">{renderItems()}</ul>
         </div>
