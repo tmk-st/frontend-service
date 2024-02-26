@@ -2,6 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const ItemList = () => {
+  const section = [
+    { id: 1, img_file: "sparkles_fill", title: "最新" },
+    { id: 2, img_file: "trending_up_fill", title: "トレンド" },
+    { id: 3, img_file: "book_6_fill", title: "定番" },
+  ];
+
   const [items, setItems] = useState([]);
   const [categories, setCategories] = useState<Record<number, string>>({});
 
@@ -37,26 +43,25 @@ const ItemList = () => {
     return (
       <>
         {items.map((item) => (
-          <li
-            key={item.id}
-            className="shadow-lg bg-white w-[18rem] rounded-xl p-4 hover:shadow-inner"
-          >
-            {/* FIXME 仮画像 */}
-            <div className="flex justify-center">
-              <img src="/img/laptop_2_line.png" className="w-[5rem]" />
-            </div>
-            <div className="flex flex-col justify-between h-[70%]">
-              <div>
-                <h3 className="text-2xl font-extrabold mb-5">{item.name}</h3>
-                <span>{item.description}</span>
+          <Link to="/detail" key={item.id}>
+            <li className="shadow-lg bg-white w-[18rem] h-[18rem] rounded-xl p-4 hover:shadow-inner">
+              {/* FIXME 仮画像 */}
+              <div className="flex justify-center">
+                <img src="/img/laptop_2_line.png" className="w-[5rem]" />
               </div>
-              <div className="flex justify-between mt-5 mb-2">
-                <span className="text-sm text-gray-300 border block rounded-lg w-fit px-2 py-1">
-                  {categories[item.category_id]}
-                </span>
+              <div className="flex flex-col justify-between h-[70%]">
+                <div>
+                  <h3 className="text-2xl font-extrabold mb-5">{item.name}</h3>
+                  <span>{item.description}</span>
+                </div>
+                <div className="flex justify-between mt-5 mb-2">
+                  <span className="text-sm text-gray-300 border block rounded-lg w-fit px-2 py-1">
+                    {categories[item.category_id]}
+                  </span>
+                </div>
               </div>
-            </div>
-          </li>
+            </li>
+          </Link>
         ))}
       </>
     );
@@ -64,35 +69,20 @@ const ItemList = () => {
 
   return (
     <div>
-      <Link to="/detail">
-        <div className="my-[100px]">
+      {section.map((item) => (
+        <div key={item.id} className="my-[100px]">
           <div className="flex mb-5">
-            <img src="/img/sparkles_fill.svg" />
-            <h2 className="text-3xl ml-3">最新</h2>
+            <img src={"/img/" + item.img_file + ".svg"} />
+            <div className="flex">
+              <h2 className="text-3xl ml-3">{item.title}</h2>
+              <Link to={"/all_items?id=" + item.id} className="items-center flex">
+                <span className="text-gray-300 ml-5 text-sm">もっと見る</span>
+              </Link>
+            </div>
           </div>
           <ul className="flex justify-between">{renderItems()}</ul>
         </div>
-      </Link>
-
-      <Link to="/detail">
-        <div className="my-[100px]">
-          <div className="flex mb-5">
-            <img src="/img/trending_up_fill.svg" />
-            <h2 className="text-3xl ml-2">トレンド</h2>
-          </div>
-          <ul className="flex justify-between">{renderItems()}</ul>
-        </div>
-      </Link>
-
-      <Link to="/detail">
-        <div className="my-[100px]">
-          <div className="flex mb-5">
-            <img src="/img/book_6_fill.svg" />
-            <h2 className="text-3xl ml-3">定番</h2>
-          </div>
-          <ul className="flex justify-between">{renderItems()}</ul>
-        </div>
-      </Link>
+      ))}
     </div>
   );
 };

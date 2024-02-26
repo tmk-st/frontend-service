@@ -21,12 +21,16 @@ const Category = () => {
   const renderCategory = () => {
     return (
       <>
-        {category.map((item) => (
-          <Link to={"/category?" + item.id} key={item.id}>
-            <li className="text-2xl mr-6 rounded-full py-4 bg-[#1C1C1C] text-white w-[15rem] flex">
-              <h3 className="my-0 mx-auto">{item.name}</h3>
-            </li>
-          </Link>
+        <li className="text-xl mr-6 rounded-full py-3 bg-[#1C1C1C] text-white w-[11rem] flex cursor-pointer">
+          <h3 className="my-0 mx-auto">すべて</h3>
+        </li>
+        {category.map((item, index) => (
+          <li
+            key={index}
+            className="text-xl mr-6 rounded-full py-3 border-2 border-solid border-[#1c1c1c] w-[11rem] flex cursor-pointer"
+          >
+            <h3 className="my-0 mx-auto">{item.name}</h3>
+          </li>
         ))}
       </>
     );
