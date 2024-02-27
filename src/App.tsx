@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import UserIndex from "./user/pages/UserIndex";
-import About from "./user/pages/About";
-import Detail from "./user/pages/Detail";
-import AllItems from "./user/pages/AllItems";
-import AdminIndex from "./admin/pages/AdminIndex";
+import UserIndex from "./pages/user/Index";
+import About from "./pages/user/About";
+import Detail from "./pages/user/Detail";
+import AllItems from "./pages/user/AllItems";
+import AdminIndex from "./pages/admin/Index";
 
 const App = () => {
   return (

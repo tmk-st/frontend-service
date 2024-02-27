@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../components/Header";
-import Footer from "../../shared/components/Footer";
+import Header from "../../components/user/Header";
+import Footer from "../../components/shared/Footer";
 
 const Detail = () => {
   return (

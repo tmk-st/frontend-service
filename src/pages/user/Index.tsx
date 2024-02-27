@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../components/Header";
-import CategoryList from "../components/CategoryList";
-import ItemList from "../components/ItemList";
-import Footer from "../../shared/components/Footer";
+import Header from "../../components/user/Header";
+import Category from "../../components/user/Category";
+import MainContent from "../../components/user/MainContent";
+import Footer from "../../components/shared/Footer";
 
-const UserIndex = () => {
+const Index = () => {
   return (
     <div>
       <Header />
@@ -19,11 +19,11 @@ const UserIndex = () => {
           <span className="text-[#EA3800] border-b border-[#EA3800] p-1">トレンド</span>を紹介します
         </p>
       </div>
-      <CategoryList />
-      <ItemList />
+      <Category />
+      <MainContent />
       <Footer />
     </div>
   );
 };
 
-export default UserIndex;
+export default Index;

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ItemList from "./ItemList"
 
-const ItemList = () => {
+const MainContent = () => {
   const section = [
     { id: 1, img_file: "sparkles_fill", title: "最新" },
     { id: 2, img_file: "trending_up_fill", title: "トレンド" },
@@ -39,6 +40,7 @@ const ItemList = () => {
     getItems();
   }, []);
 
+  // TODO ItemListにpropsで渡す
   const renderItems = () => {
     return (
       <>
@@ -87,4 +89,4 @@ const ItemList = () => {
   );
 };
 
-export default ItemList;
+export default MainContent;

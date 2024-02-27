@@ -1,13 +1,11 @@
 import React from "react";
-import User from "../components/User";
-import ItemList from "../components/ItemList";
+import Post from "../../components/admin/Post";
 
 const AdminIndex = () => {
   return (
     <div>
       <p>管理画面</p>
-      <User />
-      <ItemList />
+      <Post />
     </div>
   );
 };
