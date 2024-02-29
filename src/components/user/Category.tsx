@@ -17,9 +17,9 @@ const Category = () => {
     getCategory();
   }, []);
 
-  const renderCategory = () => {
-    return (
-      <>
+  return (
+    <div className="my-[100px]">
+      <ul className="flex">
         <li className="text-xl mr-6 rounded-full py-3 bg-[#1C1C1C] text-white w-[11rem] flex cursor-pointer">
           <h3 className="my-0 mx-auto">すべて</h3>
         </li>
@@ -31,13 +31,7 @@ const Category = () => {
             <h3 className="my-0 mx-auto">{item.name}</h3>
           </li>
         ))}
-      </>
-    );
-  };
-
-  return (
-    <div className="my-[100px]">
-      <ul className="flex">{renderCategory()}</ul>
+      </ul>
     </div>
   );
 };

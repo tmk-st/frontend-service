@@ -6,7 +6,7 @@ import Footer from "../../components/shared/Footer";
 import { useLocation } from "react-router-dom";
 
 const AllItems = () => {
-  // パラメータからカテゴリーIDを取得Q
+  // パラメータからカテゴリーIDを取得
   const searchParams = new URLSearchParams(useLocation().search);
   const id = searchParams.get("id");
 

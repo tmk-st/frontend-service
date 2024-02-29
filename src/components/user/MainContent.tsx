@@ -45,7 +45,7 @@ const MainContent = () => {
     return (
       <>
         {items.map((item) => (
-          <Link to="/detail" key={item.id}>
+          <Link to={"/detail?id=" + item.id} key={item.id}>
             <li className="shadow-lg bg-white w-[18rem] h-[18rem] rounded-xl p-4 hover:shadow-inner">
               {/* FIXME 仮画像 */}
               <div className="flex justify-center">
