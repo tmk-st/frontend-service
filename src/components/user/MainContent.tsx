@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ItemList from "./ItemList"
 
-const MainContent = () => {
+const MainContent = () => {  
   const section = [
     { id: 1, img_file: "sparkles_fill", title: "最新" },
     { id: 2, img_file: "trending_up_fill", title: "トレンド" },
@@ -19,7 +19,7 @@ const MainContent = () => {
         const response = await fetch("http://localhost:3001/api/items");
         const data = await response.json();
         setItems(data);
-
+        
         // カテゴリの取得
         const categoryResponse = await fetch(
           "http://localhost:3001/api/categories"

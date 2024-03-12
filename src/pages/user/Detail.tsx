@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/user/Header";
 import Footer from "../../components/shared/Footer";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Detail = () => {
   // パラメータからidを取得
@@ -12,6 +12,8 @@ const Detail = () => {
 
   interface Item {
     id: number;
+    name: string;
+    description: string;
     detail: string;
     link: string;
   }
@@ -37,12 +39,33 @@ const Detail = () => {
       <Header />
       {items && (
         <div className="my-10">
-          <div className="bg-[#1C1C1C] rounded-full w-fit px-5 py-2">
-            <Link to={items.link}>
-              <span className="text-white">公式サイトへ</span>
-            </Link>
+          <div className="flex">
+            {/* FIXME 仮画像 */}
+            <img src="/img/laptop_2_line.png" className="w-[10rem]" />
+            <div className="items-center ml-5">
+              <span className="text-2xl my-5 flex font-medium">{items.name}</span>
+              <div className="bg-[#1C1C1C] rounded-full w-fit px-5 py-2">
+                <a
+                  href={items.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex"
+                >
+                  <span className="text-white">公式サイトへ</span>
+                  <img src="/img/external_link_line.svg" />
+                </a>
+              </div>
+            </div>
           </div>
+
           <div className="bg-white p-10 my-5 rounded-xl shadow-lg">
+            <div className="text-2xl font-medium mb-5 pl-3 border-l-[8px] border-[#EA3800]">
+              概要
+            </div>
+            <span>{items.description}</span>
+            <div className="text-2xl font-medium mt-20 mb-5 pl-3 border-l-[8px] border-[#EA3800]">
+              詳細情報
+            </div>
             <span>{items.detail}</span>
           </div>
         </div>
