@@ -5,13 +5,13 @@ const Header = () => {
   return (
     <div className="justify-between flex">
       <Link to="/" className="text-center">
-        <span>
+        <h1 className="font-extrabold">
           最新
           <br />
           フロントエンドツール
           <br />
           まとめ
-        </span>
+        </h1>
       </Link>
       <ul className="flex">
         <li className="cursor-pointer">

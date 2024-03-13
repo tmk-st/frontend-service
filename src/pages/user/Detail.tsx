@@ -43,7 +43,7 @@ const Detail = () => {
             {/* FIXME 仮画像 */}
             <img src="/img/laptop_2_line.png" className="w-[10rem]" />
             <div className="items-center ml-5">
-              <span className="text-2xl my-5 flex font-medium">{items.name}</span>
+              <h2 className="text-3xl my-5 flex font-bold">{items.name}</h2>
               <div className="bg-[#1C1C1C] rounded-full w-fit px-5 py-2">
                 <a
                   href={items.link}
@@ -51,21 +51,21 @@ const Detail = () => {
                   rel="noopener noreferrer"
                   className="flex"
                 >
-                  <span className="text-[#f4f4f4]">公式サイトへ</span>
-                  <img src="/img/external_link_line.svg" />
+                  <span className="text-[#f4f4f4] text-sm">公式サイトへ</span>
+                  <img src="/img/external_link_line.svg" className="w-4 ml-1" />
                 </a>
               </div>
             </div>
           </div>
 
           <div className="bg-white p-10 my-5 rounded-xl shadow-lg">
-            <div className="text-2xl font-medium mb-5 pl-3 border-l-[8px] border-[#EA3800]">
+            <h3 className="text-2xl font-bold mb-5 pl-3 border-l-[8px] border-[#EA3800]">
               概要
-            </div>
+            </h3>
             <span>{items.description}</span>
-            <div className="text-2xl font-medium mt-20 mb-5 pl-3 border-l-[8px] border-[#EA3800]">
+            <h3 className="text-2xl font-bold mt-20 mb-5 pl-3 border-l-[8px] border-[#EA3800]">
               詳細情報
-            </div>
+            </h3>
             <span>{items.detail}</span>
           </div>
         </div>
