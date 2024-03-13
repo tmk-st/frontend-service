@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import UserIndex from "./pages/user/Index";
 import About from "./pages/user/About";
 import Detail from "./pages/user/Detail";
-import AllItems from "./pages/user/AllItems";
 import AdminIndex from "./pages/admin/Index";
 
 const App = () => {
@@ -15,7 +14,6 @@ const App = () => {
           <Route path="/" element={<UserIndex />} />
           <Route path="/about" element={<About />} />
           <Route path="/detail" element={<Detail />} />
-          <Route path="/all_items" element={<AllItems />} />
 
           {/* 管理画面 */}
           <Route path="/admin" element={<AdminIndex />} />

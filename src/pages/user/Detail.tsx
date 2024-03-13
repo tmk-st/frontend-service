@@ -51,7 +51,7 @@ const Detail = () => {
                   rel="noopener noreferrer"
                   className="flex"
                 >
-                  <span className="text-white">公式サイトへ</span>
+                  <span className="text-[#f4f4f4]">公式サイトへ</span>
                   <img src="/img/external_link_line.svg" />
                 </a>
               </div>

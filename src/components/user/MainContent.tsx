@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ItemList from "./ItemList"
 
-const MainContent = () => {  
+const MainContent = () => {
   const section = [
     { id: 1, img_file: "sparkles_fill", title: "最新" },
     { id: 2, img_file: "trending_up_fill", title: "トレンド" },
@@ -19,7 +18,7 @@ const MainContent = () => {
         const response = await fetch("http://localhost:3001/api/items");
         const data = await response.json();
         setItems(data);
-        
+
         // カテゴリの取得
         const categoryResponse = await fetch(
           "http://localhost:3001/api/categories"
@@ -40,7 +39,6 @@ const MainContent = () => {
     getItems();
   }, []);
 
-  // TODO ItemListにpropsで渡す
   const renderItems = () => {
     return (
       <>
@@ -57,7 +55,7 @@ const MainContent = () => {
                   <span>{item.description}</span>
                 </div>
                 <div className="flex justify-between mt-5 mb-2">
-                  <span className="text-sm text-gray-300 border block rounded-lg w-fit px-2 py-1">
+                  <span className="text-sm text-[#f4f4f4] bg-[#1C1C1C] block rounded-full w-fit px-4 py-1">
                     {categories[item.category_id]}
                   </span>
                 </div>
@@ -76,13 +74,14 @@ const MainContent = () => {
           <div className="flex mb-5">
             <img src={"/img/" + item.img_file + ".svg"} />
             <div className="flex">
-              <h2 className="text-3xl ml-3">{item.title}</h2>
-              <Link to={"/all_items?id=" + item.id} className="items-center flex">
-                <span className="text-gray-300 ml-5 text-sm">もっと見る</span>
-              </Link>
+              <h2 className="text-3xl ml-2">{item.title}</h2>
             </div>
           </div>
           <ul className="flex justify-between">{renderItems()}</ul>
+          <div className="cursor-pointer text-center w-fit mt-10 mx-auto flex">
+            <span>もっと見る</span>
+            <img src="/img/down_small_line.svg" className="" />
+          </div>
         </div>
       ))}
     </div>
