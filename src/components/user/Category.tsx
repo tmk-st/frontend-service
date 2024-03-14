@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-const Category = () => {
+interface CategoryProps {
+  onSelectedCategoryId: (data: number) => void;
+}
+
+const Category: React.FC<CategoryProps> = ({ onSelectedCategoryId }) => {
   const [category, setCategory] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
@@ -19,8 +23,9 @@ const Category = () => {
   }, []);
 
   // カテゴリーがクリックされたときの処理
-  const handleCategoryClick = (index: number | null) => {
+  const handleCategoryClick = (index: number, categoryId: number | null) => {
     setSelectedCategory(index);
+    onSelectedCategoryId(categoryId);
   };
 
   // カテゴリーのスタイルを取得する
@@ -41,7 +46,7 @@ const Category = () => {
           className={`${getCategoryStyle(
             null
           )} text-xl mr-6 rounded-full py-3 w-[11rem] flex cursor-pointer`}
-          onClick={() => handleCategoryClick(null)}
+          onClick={() => handleCategoryClick(null, null)}
         >
           <h3 className="my-0 mx-auto">すべて</h3>
         </li>
@@ -51,7 +56,7 @@ const Category = () => {
             className={`${getCategoryStyle(
               index
             )} text-xl mr-6 rounded-full py-3 w-[11rem] flex cursor-pointer`}
-            onClick={() => handleCategoryClick(index)}
+            onClick={() => handleCategoryClick(index, item.id)}
           >
             <h3 className="my-0 mx-auto">{item.name}</h3>
           </li>

@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const MainContent = () => {
+interface MainContentProps {
+  selectedCategoryId: number | null;
+}
+
+interface Item {
+  category_id: number;
+}
+
+const MainContent: React.FC<MainContentProps> = ({ selectedCategoryId }) => {
   const section = [
     { id: 1, img_file: "sparkles_fill", title: "最新" },
     { id: 2, img_file: "trending_up_fill", title: "トレンド" },
@@ -17,7 +25,16 @@ const MainContent = () => {
         // 各アイテムを取得
         const response = await fetch("http://localhost:3001/api/items");
         const data = await response.json();
-        setItems(data);
+
+        // 選択されたカテゴリーをitemに詰める
+        const filteredItems = data.filter(
+          (item: Item) => item.category_id === selectedCategoryId
+        );
+        if (filteredItems.length > 0) {
+          setItems(filteredItems);
+        } else {
+          setItems(data);
+        }
 
         // カテゴリの取得
         const categoryResponse = await fetch(
@@ -37,7 +54,7 @@ const MainContent = () => {
     };
 
     getItems();
-  }, []);
+  }, [selectedCategoryId]);
 
   const renderItems = () => {
     return (
